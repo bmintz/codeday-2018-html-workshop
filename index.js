@@ -1,14 +1,12 @@
-const foods = [
-	'two number 9s',
-	'a number 9 large',
-	'a number 6 with extra dip',
-	'a number 7',
-	'two number 45s, one with cheese',
-	'a large soda.']
+var currentNumber = 0
+const number = document.getElementById('number')
 
-document.querySelector('button').onclick = function() {
-	if (foods.length == 0)
-		return;
-	el = document.createElement('li')
-	el.innerHTML = foods.shift()
-	document.getElementById('exampleList').appendChild(el)}
+function updateNumber(delta) {
+	currentNumber += delta
+	number.innerHTML = currentNumber}
+
+document.getElementById('increase').onclick = function() {
+	updateNumber(1)}
+
+document.getElementById('decrease').onclick = function() {
+	updateNumber(-1)}
