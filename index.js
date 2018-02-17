@@ -1,12 +1,14 @@
-var currentNumber = 0
-const number = document.getElementById('number')
+const getById = document.getElementById
 
-function updateNumber(delta) {
-	currentNumber += delta
-	number.innerHTML = currentNumber}
+const yourHP = document.getElementById('yourHP')
+const monsterHP = document.getElementById('monsterHP')
 
-document.getElementById('increase').onclick = function() {
-	updateNumber(1)}
+function updateHealth(yourHealthDelta, monsterHealthDelta) {
+	yourHP.innerHTML = parseInt(yourHP.innerHTML) + yourHealthDelta
+	monsterHP.innerHTML = parseInt(monsterHP.innerHTML) + monsterHealthDelta}
 
-document.getElementById('decrease').onclick = function() {
-	updateNumber(-1)}
+document.getElementById('heal').onclick = function() {
+	updateHealth(10, 0)}
+
+document.getElementById('attack').onclick = function() {
+	updateHealth(-10, -20)}
